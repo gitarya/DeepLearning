@@ -15,4 +15,5 @@ The folder includes:
 <li>Initialization</li>
 <li>Regularization</li>
 <li>Optimization methods</li>
+<li>Tensorflow example</li>
 </ul>
