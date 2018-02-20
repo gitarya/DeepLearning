@@ -14,6 +14,7 @@ The folder includes:
 <ul>
 <li>Initialization</li>
 <li>Regularization</li>
-<li>Optimization methods</li>
-<li>Tensorflow example</li>
+<li>Optimization Methods</li>
+<li>Tensorflow Example<li>
+<li>Tensorflow Deeplearning Network<li>
 </ul>
