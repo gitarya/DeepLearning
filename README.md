@@ -18,3 +18,9 @@ The folder includes:
 <li>Tensorflow Example</li>
 <li>Tensorflow Deeplearning Network</li>
 </ul>
+
+<h3>Convolutional Neural Networks</h3>
+This folder focus on CNN, including:
+<ul>
+<li>Convolution Model Functions</li>
+</ul>
