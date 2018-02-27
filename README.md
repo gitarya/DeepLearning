@@ -19,8 +19,8 @@ The folder includes:
 <li>Tensorflow Deeplearning Network</li>
 </ul>
 
-<h3>Convolutional Neural Networks</h3>
+<h3>Convolutional Neural Networks卷积神经网络</h3>
 This folder focus on CNN, including:
 <ul>
 <li>Convolution Model Functions</li>
-</ul>
+<li>Convolution Model Application</li></ul>

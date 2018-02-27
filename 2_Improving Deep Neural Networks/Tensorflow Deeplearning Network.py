@@ -1,23 +1,4 @@
 
-# coding: utf-8
-
-# # TensorFlow Tutorial
-# 
-# Welcome to this week's programming assignment. Until now, you've always used numpy to build neural networks. Now we will step you through a deep learning framework that will allow you to build neural networks more easily. Machine learning frameworks like TensorFlow, PaddlePaddle, Torch, Caffe, Keras, and many others can speed up your machine learning development significantly. All of these frameworks also have a lot of documentation, which you should feel free to read. In this assignment, you will learn to do the following in TensorFlow: 
-# 
-# - Initialize variables
-# - Start your own session
-# - Train algorithms 
-# - Implement a Neural Network
-# 
-# Programing frameworks can not only shorten your coding time, but sometimes also perform optimizations that speed up your code. 
-# 
-# ## 1 - Exploring the Tensorflow Library
-# 
-# To start, you will import the library:
-# 
-
-# In[2]:
 
 import math
 import numpy as np
@@ -31,10 +12,6 @@ get_ipython().magic('matplotlib inline')
 np.random.seed(1)
 
 
-# Now that you have imported the library, we will walk you through its different applications. You will start with an example, where we compute for you the loss of one training example. 
-# $$loss = \mathcal{L}(\hat{y}, y) = (\hat y^{(i)} - y^{(i)})^2 \tag{1}$$
-
-# In[3]:
 
 y_hat = tf.constant(36, name='y_hat')            # Define y_hat constant. Set to 36.
 y = tf.constant(39, name='y')                    # Define y. Set to 39
@@ -48,19 +25,6 @@ with tf.Session() as session:                    # Create a session and print th
     print(session.run(loss))                     # Prints the loss
 
 
-# Writing and running programs in TensorFlow has the following steps:
-# 
-# 1. Create Tensors (variables) that are not yet executed/evaluated. 
-# 2. Write operations between those Tensors.
-# 3. Initialize your Tensors. 
-# 4. Create a Session. 
-# 5. Run the Session. This will run the operations you'd written above. 
-# 
-# Therefore, when we created a variable for the loss, we simply defined the loss as a function of other quantities, but did not evaluate its value. To evaluate it, we had to run `init=tf.global_variables_initializer()`. That initialized the loss variable, and in the last line we were finally able to evaluate the value of `loss` and print its value.
-# 
-# Now let us look at an easy example. Run the cell below:
-
-# In[4]:
 
 a = tf.constant(2)
 b = tf.constant(10)
@@ -68,50 +32,17 @@ c = tf.multiply(a,b)
 print(c)
 
 
-# As expected, you will not see 20! You got a tensor saying that the result is a tensor that does not have the shape attribute, and is of type "int32". All you did was put in the 'computation graph', but you have not run this computation yet. In order to actually multiply the two numbers, you will have to create a session and run it.
-
-# In[5]:
 
 sess = tf.Session()
 print(sess.run(c))
 
-
-# Great! To summarize, **remember to initialize your variables, create a session and run the operations inside the session**. 
-# 
-# Next, you'll also have to know about placeholders. A placeholder is an object whose value you can specify only later. 
-# To specify values for a placeholder, you can pass in values by using a "feed dictionary" (`feed_dict` variable). Below, we created a placeholder for x. This allows us to pass in a number later when we run the session. 
-
-# In[6]:
-
-# Change the value of x in the feed_dict
 
 x = tf.placeholder(tf.int64, name = 'x')
 print(sess.run(2 * x, feed_dict = {x: 3}))
 sess.close()
 
 
-# When you first defined `x` you did not have to specify a value for it. A placeholder is simply a variable that you will assign data to only later, when running the session. We say that you **feed data** to these placeholders when running the session. 
-# 
-# Here's what's happening: When you specify the operations needed for a computation, you are telling TensorFlow how to construct a computation graph. The computation graph can have some placeholders whose values you will specify only later. Finally, when you run the session, you are telling TensorFlow to execute the computation graph.
 
-# ### 1.1 - Linear function
-# 
-# Lets start this programming exercise by computing the following equation: $Y = WX + b$, where $W$ and $X$ are random matrices and b is a random vector. 
-# 
-# **Exercise**: Compute $WX + b$ where $W, X$, and $b$ are drawn from a random normal distribution. W is of shape (4, 3), X is (3,1) and b is (4,1). As an example, here is how you would define a constant X that has shape (3,1):
-# ```python
-# X = tf.constant(np.random.randn(3,1), name = "X")
-# 
-# ```
-# You might find the following functions helpful: 
-# - tf.matmul(..., ...) to do a matrix multiplication
-# - tf.add(..., ...) to do an addition
-# - np.random.randn(...) to initialize randomly
-# 
-
-# In[7]:
-
-# GRADED FUNCTION: linear_function
 
 def linear_function():
     """
@@ -145,61 +76,7 @@ def linear_function():
     return result
 
 
-# In[8]:
 
-print( "result = " + str(linear_function()))
-
-
-# *** Expected Output ***: 
-# 
-# <table> 
-# <tr> 
-# <td>
-# **result**
-# </td>
-# <td>
-# [[-2.15657382]
-#  [ 2.95891446]
-#  [-1.08926781]
-#  [-0.84538042]]
-# </td>
-# </tr> 
-# 
-# </table> 
-
-# ### 1.2 - Computing the sigmoid 
-# Great! You just implemented a linear function. Tensorflow offers a variety of commonly used neural network functions like `tf.sigmoid` and `tf.softmax`. For this exercise lets compute the sigmoid function of an input. 
-# 
-# You will do this exercise using a placeholder variable `x`. When running the session, you should use the feed dictionary to pass in the input `z`. In this exercise, you will have to (i) create a placeholder `x`, (ii) define the operations needed to compute the sigmoid using `tf.sigmoid`, and then (iii) run the session. 
-# 
-# ** Exercise **: Implement the sigmoid function below. You should use the following: 
-# 
-# - `tf.placeholder(tf.float32, name = "...")`
-# - `tf.sigmoid(...)`
-# - `sess.run(..., feed_dict = {x: z})`
-# 
-# 
-# Note that there are two typical ways to create and use sessions in tensorflow: 
-# 
-# **Method 1:**
-# ```python
-# sess = tf.Session()
-# # Run the variables initialization (if needed), run the operations
-# result = sess.run(..., feed_dict = {...})
-# sess.close() # Close the session
-# ```
-# **Method 2:**
-# ```python
-# with tf.Session() as sess: 
-#     # run the variables initialization (if needed), run the operations
-#     result = sess.run(..., feed_dict = {...})
-#     # This takes care of closing the session for you :)
-# ```
-# 
-
-# In[9]:
-
-# GRADED FUNCTION: sigmoid
 
 def sigmoid(z):
     """
@@ -236,56 +113,7 @@ print ("sigmoid(0) = " + str(sigmoid(0)))
 print ("sigmoid(12) = " + str(sigmoid(12)))
 
 
-# *** Expected Output ***: 
-# 
-# <table> 
-# <tr> 
-# <td>
-# **sigmoid(0)**
-# </td>
-# <td>
-# 0.5
-# </td>
-# </tr>
-# <tr> 
-# <td>
-# **sigmoid(12)**
-# </td>
-# <td>
-# 0.999994
-# </td>
-# </tr> 
-# 
-# </table> 
 
-# <font color='blue'>
-# **To summarize, you how know how to**:
-# 1. Create placeholders
-# 2. Specify the computation graph corresponding to operations you want to compute
-# 3. Create the session
-# 4. Run the session, using a feed dictionary if necessary to specify placeholder variables' values. 
-
-# ### 1.3 -  Computing the Cost
-# 
-# You can also use a built-in function to compute the cost of your neural network. So instead of needing to write code to compute this as a function of $a^{[2](i)}$ and $y^{(i)}$ for i=1...m: 
-# $$ J = - \frac{1}{m}  \sum_{i = 1}^m  \large ( \small y^{(i)} \log a^{ [2] (i)} + (1-y^{(i)})\log (1-a^{ [2] (i)} )\large )\small\tag{2}$$
-# 
-# you can do it in one line of code in tensorflow!
-# 
-# **Exercise**: Implement the cross entropy loss. The function you will use is: 
-# 
-# 
-# - `tf.nn.sigmoid_cross_entropy_with_logits(logits = ...,  labels = ...)`
-# 
-# Your code should input `z`, compute the sigmoid (to get `a`) and then compute the cross entropy cost $J$. All this can be done using one call to `tf.nn.sigmoid_cross_entropy_with_logits`, which computes
-# 
-# $$- \frac{1}{m}  \sum_{i = 1}^m  \large ( \small y^{(i)} \log \sigma(z^{[2](i)}) + (1-y^{(i)})\log (1-\sigma(z^{[2](i)})\large )\small\tag{2}$$
-# 
-# 
-
-# In[11]:
-
-# GRADED FUNCTION: cost
 
 def cost(logits, labels):
     """
@@ -325,43 +153,7 @@ def cost(logits, labels):
     return cost
 
 
-# In[12]:
 
-logits = sigmoid(np.array([0.2,0.4,0.7,0.9]))
-cost = cost(logits, np.array([0,0,1,1]))
-print ("cost = " + str(cost))
-
-
-# ** Expected Output** : 
-# 
-# <table> 
-#     <tr> 
-#         <td>
-#             **cost**
-#         </td>
-#         <td>
-#         [ 1.00538719  1.03664088  0.41385433  0.39956614]
-#         </td>
-#     </tr>
-# 
-# </table>
-
-# ### 1.4 - Using One Hot encodings
-# 
-# Many times in deep learning you will have a y vector with numbers ranging from 0 to C-1, where C is the number of classes. If C is for example 4, then you might have the following y vector which you will need to convert as follows:
-# 
-# 
-# <img src="images/onehot.png" style="width:600px;height:150px;">
-# 
-# This is called a "one hot" encoding, because in the converted representation exactly one element of each column is "hot" (meaning set to 1). To do this conversion in numpy, you might have to write a few lines of code. In tensorflow, you can use one line of code: 
-# 
-# - tf.one_hot(labels, depth, axis) 
-# 
-# **Exercise:** Implement the function below to take one vector of labels and the total number of classes $C$, and return the one hot encoding. Use `tf.one_hot()` to do this. 
-
-# In[13]:
-
-# GRADED FUNCTION: one_hot_matrix
 
 def one_hot_matrix(labels, C):
     """
@@ -406,36 +198,6 @@ one_hot = one_hot_matrix(labels, C = 4)
 print ("one_hot = " + str(one_hot))
 
 
-# **Expected Output**: 
-# 
-# <table> 
-#     <tr> 
-#         <td>
-#             **one_hot**
-#         </td>
-#         <td>
-#         [[ 0.  0.  0.  1.  0.  0.]
-#  [ 1.  0.  0.  0.  0.  1.]
-#  [ 0.  1.  0.  0.  1.  0.]
-#  [ 0.  0.  1.  0.  0.  0.]]
-#         </td>
-#     </tr>
-# 
-# </table>
-# 
-
-# ### 1.5 - Initialize with zeros and ones
-# 
-# Now you will learn how to initialize a vector of zeros and ones. The function you will be calling is `tf.ones()`. To initialize with zeros you could use tf.zeros() instead. These functions take in a shape and return an array of dimension shape full of zeros and ones respectively. 
-# 
-# **Exercise:** Implement the function below to take in a shape and to return an array (of the shape's dimension of ones). 
-# 
-#  - tf.ones(shape)
-# 
-
-# In[15]:
-
-# GRADED FUNCTION: ones
 
 def ones(shape):
     """
@@ -466,9 +228,7 @@ def ones(shape):
     return ones
 
 
-# In[16]:
 
-print ("ones = " + str(ones([3])))
 
 
 # **Expected Output:**
@@ -484,7 +244,6 @@ print ("ones = " + str(ones([3])))
 #     </tr>
 # 
 # </table>
-
 # # 2 - Building your first neural network in tensorflow
 # 
 # In this part of the assignment you will build a neural network using tensorflow. Remember that there are two parts to implement a tensorflow model:
