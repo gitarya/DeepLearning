@@ -23,4 +23,6 @@ The folder includes:
 This folder focus on CNN, including:
 <ul>
 <li>Convolution Model Functions</li>
-<li>Convolution Model Application</li></ul>
+<li>Convolution Model Application</li>
+<li>Residual Networks残差网络</li>
+</ul>
