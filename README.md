@@ -25,4 +25,5 @@ This folder focus on CNN, including:
 <li>Convolution Model Functions</li>
 <li>Convolution Model Application</li>
 <li>Residual Networks残差网络</li>
+<li>Car Detection Application by YOLO algorithm使用YOLO算法构建汽车检测应用</li>
 </ul>
