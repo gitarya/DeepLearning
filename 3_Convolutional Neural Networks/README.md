@@ -14,5 +14,9 @@ This file uses keras framework to construct a residual networks. The residual ne
 使用keras框架构建了残差网络。残差网络可以用于训练更深层的神经网络。
 
 <h3>Car Detection Application by YOLO algorithm用YOLO算法构建汽车检测应用</h3>
-This file use YOLO model with CNN to detect object.
+This file uses YOLO model with CNN to detect object.
 使用YOLO算法结合CNN构建了检测应用
+
+<h3>Art Generation with Neural Style Transfer使用风格迁移算法实现艺术品生成器</h3>
+This file implements the neural style transfer algorithm to generate novel artistic images.
+该文件实现了风格迁移算法来生成艺术图片
