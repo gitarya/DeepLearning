@@ -27,4 +27,5 @@ This folder focus on CNN, including:
 <li>Residual Networks残差网络</li>
 <li>Car Detection Application by YOLO algorithm使用YOLO算法构建汽车检测应用</li>
 <li>Art Generation with Neural Style Transfer使用风格迁移算法实现艺术品生成器</li>
+<li>Face Recognition Application</li>
 </ul>

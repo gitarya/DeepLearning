@@ -20,3 +20,9 @@ This file uses YOLO model with CNN to detect object.
 <h3>Art Generation with Neural Style Transfer使用风格迁移算法实现艺术品生成器</h3>
 This file implements the neural style transfer algorithm to generate novel artistic images.
 该文件实现了风格迁移算法来生成艺术图片
+
+![image](https://github.com/gitarya/readme_add_pic/blob/master/images/neural%20style%20transfer.png)
+
+<h3>Face Recognition Application</h3>
+This file implements the face verification and face recognition functions with the triplet loss.
+该文件通过Triplet loss功能实现了人脸验证和人脸识别功能
