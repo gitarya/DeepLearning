@@ -29,3 +29,11 @@ This folder focus on CNN, including:
 <li>Art Generation with Neural Style Transfer使用风格迁移算法实现艺术品生成器</li>
 <li>Face Recognition Application</li>
 </ul>
+
+<h3>Sequence Models序列模型</h3>
+The folder includes:
+<ul>
+<li>Recurrent Neural Networks and LSTM algorithm循环神经网络与LSTM算法</li>
+<li>Name Generator</li>
+<li>Music Generator with LSTM/li>
+</ul>
