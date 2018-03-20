@@ -27,13 +27,14 @@ This folder focus on CNN, including:
 <li>Residual Networks残差网络</li>
 <li>Car Detection Application by YOLO algorithm使用YOLO算法构建汽车检测应用</li>
 <li>Art Generation with Neural Style Transfer使用风格迁移算法实现艺术品生成器</li>
-<li>Face Recognition Application</li>
+<li>Face Recognition Application人脸识别应用</li>
 </ul>
 
 <h3>Sequence Models序列模型</h3>
 The folder includes:
 <ul>
 <li>Recurrent Neural Networks and LSTM algorithm循环神经网络与LSTM算法</li>
-<li>Name Generator</li>
-<li>Music Generator with LSTM/li>
+<li>Name Generator名字生成器</li>
+<li>Music Generator with LSTM音乐生成器</li>
+<li>Word Vectors词向量</li>
 </ul>
