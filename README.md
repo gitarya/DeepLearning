@@ -37,4 +37,5 @@ The folder includes:
 <li>Name Generator名字生成器</li>
 <li>Music Generator with LSTM音乐生成器</li>
 <li>Word Vectors词向量</li>
+<li>Emojify表情判断</li>
 </ul>
