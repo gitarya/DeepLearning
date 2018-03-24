@@ -19,3 +19,7 @@ This file concentrates on operations on word vectors including cosine similarity
 This project can help to make the text message more expressive. If you input a sentence like "Congratulations!", the emojify will return the sentence "Congratulations!👍". To make the emojify more accuracy, the RNN and LSTM algorithm are used.
 该项目可以帮助让文本变得更加生动。举例来说，如果你输入“恭喜！”，该程序会返回“恭喜！👍”。同时该项目使用RNN与LSTM算法来提升准确率。
 
+
+<li>Neural machine translation with attention使用注意力机制实现机器翻译</li>
+
+

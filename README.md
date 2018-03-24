@@ -38,4 +38,5 @@ The folder includes:
 <li>Music Generator with LSTM音乐生成器</li>
 <li>Word Vectors词向量</li>
 <li>Emojify表情判断</li>
+<li>Neural machine translation with attention使用注意力机制实现机器翻译</li>
 </ul>
