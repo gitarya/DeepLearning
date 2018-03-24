@@ -21,5 +21,5 @@ This project can help to make the text message more expressive. If you input a s
 
 
 <li>Neural machine translation with attention使用注意力机制实现机器翻译</li>
-
-
+This project build a Neural Machine Translation (NMT) model to translate human readable dates ("25th of June, 2009") into machine readable dates ("2009-06-25"). To implement this function, The attention model is used.
+该项目通过机器翻译模型实现了日期的转化，比如，将"25th of June, 2009"等人类可识别的模式转化为"2009-06-25"等机器可识别的模式。注意力机制是实现该模型的关键。
