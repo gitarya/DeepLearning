@@ -39,4 +39,5 @@ The folder includes:
 <li>Word Vectors词向量</li>
 <li>Emojify表情判断</li>
 <li>Neural machine translation with attention使用注意力机制实现机器翻译</li>
+<li>Trigger Word Detection 触发词检测</li>
 </ul>

@@ -23,3 +23,7 @@ This project can help to make the text message more expressive. If you input a s
 <li>Neural machine translation with attention使用注意力机制实现机器翻译</li>
 This project build a Neural Machine Translation (NMT) model to translate human readable dates ("25th of June, 2009") into machine readable dates ("2009-06-25"). To implement this function, The attention model is used.
 该项目通过机器翻译模型实现了日期的转化，比如，将"25th of June, 2009"等人类可识别的模式转化为"2009-06-25"等机器可识别的模式。注意力机制是实现该模型的关键。
+
+<li>Trigger Word Detection触发词检测</li>
+This project construces a speech dataset and implements the algorithm for trigger word detection. This technique allows devices like Amazon Alexa, Google Home and Apple Siri to wake up upon hearing a certain word.
+该项目实现了构建语音数据集和触发词算法的实现。这种技术被用于类似Amazon Alexs, Google Home, Apple Siri这样的设备，使得它们在听到一个特定的单词后会被唤醒。
